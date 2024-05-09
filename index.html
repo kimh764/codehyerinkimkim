@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>NYC Domain Registrations by Zip Code</title>
+    <meta name="description" content="DATA" />
+    <link rel="icon" type="image/hyerin.png" href="images/hyerin.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/destyle.css@1.0.5/destyle.css"
+    />
+  
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/b8a7fea4d4.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Questrial&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <div class="wrapper">
+        <h1>
+          <a href="index.html">
+            <img
+              class="logo"
+              src="images/hyerin.png"
+              alt="DATA"
+            />
+          </a>
+        </h1>
+        <nav>
+          <ul class="main-nav">
+            <li><a class="current menu-home" href="index.html">Home</a></li>
+            <li><a class="menu-data" href="https://data.cityofnewyork.us/Business/-nyc-Domain-Registrations-by-Zip-Code/ymvu-4x4s/about_data">Data</a></li>
+            <li><a class="menu-form" href="index1.html">ZIP CODE</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="home-hero wrapper">
+      <h2>NYC Domain Registrations<br>
+        by Zip Code</h2>
+  
+      <p>
+        NYC domain registrations broken down by zip code. This list is updated monthly.
+
+      </p>
+      <a href="job.html" class="btn btn-primary">Data</a>
+    </section>
+
+    <section class="brown-bg">
+      <div class="wrapper content flex-reverse">
+        <div class="home-text">
+          <h2 class="title">Pie Chart</h2>
+          <p>
+           NYC domain registrations broken down by zip code. This list is updated monthly.
+          </p>
+       
+        </div>
+        <div class="home-chart">
+          <div class="pie-chart">
+            <div class="chart-slice" data-label="98">Manhattan</div>
+            <div class="chart-slice2" data-label="65">Queens</div>
+            <div class="chart-slice3" data-label="41">Brooklyn</div>
+            <div class="chart-slice4" data-label="25">Bronx</div>
+            <div class="chart-slice5" data-label="13">Staten Island</div>
+            <br>
+          </div>
+          
+
+        </div>
+      </div>
+    </section>
+
+    <section class="wrapper content">
+      <div class="home-text">
+        <h2 class="title">
+    Column Chart
+        </h2>
+        <p>
+          Last Updated<br>
+          May 7, 2024<br>
+          Data Provided By<br>
+          Office of Technology and Innovation (OTI)<br>
+          Showing rows 1 to 17 out of 243
+        </p>
+      </div>
+      <div class="home-chart">
+        <div class="bar-chart"></div>
+        <p>NYC Zip Code Data</p>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

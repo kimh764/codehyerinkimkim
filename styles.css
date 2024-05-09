@@ -1,0 +1,161 @@
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--springy: linear(
+		0,
+		0.009,
+		0.037 1.7%,
+		0.153 3.6%,
+		0.776 10.3%,
+		1.001,
+		1.142 16%,
+		1.185,
+		1.209 19%,
+		1.215 19.9% 20.8%,
+		1.199,
+		1.165 25%,
+		1.056 30.3%,
+		1.008 33%,
+		0.973,
+		0.955 39.2%,
+		0.953 41.1%,
+		0.957 43.3%,
+		0.998 53.3%,
+		1.009 59.1% 63.7%,
+		0.998 78.9%,
+		1
+	);
+	--r: 50px;
+	--size: 50px;
+}
+html,
+body {
+    font-family: "Questrial", sans-serif;
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: auto;
+}
+body {
+	display: grid;
+	place-content: center;
+}
+.circle {
+	border-radius: 4px;
+	cursor: pointer;
+	width: var(--r);
+	height: var(--r);
+	transition: all 1s var(--springy);
+	background-image: url('images/kimkim.png');
+	background-size: cover; /* Adjust as needed */
+	background-position: center; /* Adjust as needed */
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	padding: 8px;
+	& span {
+		opacity: 0.25;
+	}
+
+	&:hover {
+		& span {
+			opacity: 0.9;
+		}
+	}
+}
+
+
+label:has(:checked) {
+	--r: calc(var(--size) - 10px);
+	& .circle {
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		border: solid 1px #00000066;
+		& span {
+			opacity: 1;
+		}
+	}
+}
+
+[type="checkbox"] {
+	display: none;
+}
+
+.app {
+	width: 85vw;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+
+	& label {
+		position: relative;
+		width: var(--size);
+		height: var(--size);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	& label {
+		display: flex;
+		align-items: center;
+		min-width: 25vw;
+
+		& input {
+			width: 80%;
+    
+		}
+	}
+}
+
+
+.selected {
+	width: 85vw;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-top: 10px;
+	transition: all 1s var(--springy);
+
+	& b {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		background: hsla(
+			var(--hue),
+			var(--saturation, 90%),
+			var(--lightness, 60%),
+			0.5
+		);
+		font-size: 10px;
+		display: none;
+
+		& em {
+			display: block;
+			height: 100%;
+			line-height: 30px;
+			text-align: center;
+		}
+	}
+
+}
+
+a {
+    text-decoration: none;
+    color: black;
+  }

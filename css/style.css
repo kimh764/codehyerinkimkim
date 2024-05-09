@@ -1,0 +1,401 @@
+@charset 'UTF-8';
+
+/*
+GENERAL STYLING
+================================================ */
+html {
+  font-size: 100%;
+}
+body {
+  color: #555;
+  font-family: sans-serif;
+}
+
+/*
+COMMON
+================================================ */
+p,
+td {
+  line-height: 1.7;
+}
+
+
+/* Layout */
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+main {
+  max-width: 900px;
+  width: 94%;
+  margin: 6.25rem auto;
+  padding: 3rem 2rem;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+.text-center {
+  text-align: center;
+}
+
+/* Button */
+.btn {
+  font-family: "Questrial", sans-serif;
+  display: inline-block;
+  padding: 1.25rem 3.25rem;
+  font-size: 1.375rem;
+  text-align: center;
+  width: 100%;
+}
+.btn-primary {
+  color: #fff;
+  background: #a5a5a6;
+}
+.btn-primary:hover {
+  background: #a4a4a4;
+}
+.btn-secondary {
+  color: #555;
+  background: #d0bea2;
+}
+.btn-secondary:hover {
+  background: #d9cebe;
+}
+
+/* Heading */
+.title {
+  font-family: "Cutive Mono", monospace;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+.title::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 10rem;
+  background: #979797;
+  margin: 2rem 0 2.5rem;
+}
+.title-center {
+  text-align: center;
+}
+.title-center::after {
+  margin: 2.5rem auto;
+}
+
+/* Table */
+table {
+  margin: 3.5rem 0;
+  width: 100%;
+}
+th,
+td {
+  display: block;
+}
+th {
+  font-weight: normal;
+  background: #f8f6f2;
+  vertical-align: middle;
+  padding: 1rem;
+}
+td {
+  padding: 0.75rem 1rem 1.75rem;
+}
+
+/*
+HEADER
+================================================ */
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.main-nav {
+  display: flex;
+}
+.main-nav li {
+  text-align: center;
+  font-size: 0.75rem;
+}
+.logo {
+  width: 6rem;
+}
+.main-nav a {
+  display: block;
+  padding: 0.5rem;
+  width: 4rem;
+}
+.main-nav a::before {
+  display: block;
+  margin-bottom: 0.25rem;
+  /* Font Awesome */
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 900;
+  color: #555;
+  font-size: 1.25rem;
+}
+
+.main-nav .current {
+  background: #f8f6f2;
+}
+
+/*
+HOME
+================================================ */
+.home-hero {
+  background: url("../images/IMG_9846.png") no-repeat right top / 70vw auto;
+  padding: 5.5rem 1rem 3rem;
+}
+.home-hero h2 {
+  font-family: "Cutive Mono", monospace;
+  font-size: 1.5rem;
+  margin: 8vw 0 12vw;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  display: inline-block;
+}
+.home-hero p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+/* Contents */
+.brown-bg {
+  background: #f8f6f2;
+}
+.content {
+  padding: 4rem 1rem;
+}
+.home-text {
+  margin-bottom: 2rem;
+}
+.home-chart {
+  margin-left: 2vw;
+}
+.flex-reverse .home-chart {
+  margin: 0 2vw 0 0;
+}
+.home-chart img {
+  width: 100%;
+}
+.home-chart p {
+  text-align: center;
+}
+
+/* 그래프 글씨 */
+.ct-label {
+  font-size: 1rem;
+  fill: #fff;
+}
+
+/* 원 그래프 */
+.ct-series-a .ct-slice-pie {
+  fill: #000;
+}
+.ct-series-b .ct-slice-pie {
+  fill: #393a3a;
+}
+.ct-series-c .ct-slice-pie {
+  fill: #666666;
+}
+.ct-series-d .ct-slice-pie {
+  fill: #868686;
+}
+.ct-series-e .ct-slice-pie {
+  fill: #b0b1b4;
+}
+.ct-series-f .ct-slice-pie {
+  fill: #bbb;
+}
+
+
+
+/* 막대 그래프 */
+.ct-series-a .ct-bar {
+  stroke: #666666;
+}
+
+.ct-bar {
+  stroke-width: 10%;
+}
+
+
+/*
+DESKTOP SIZE
+================================================ */
+@media (min-width: 600px) {
+  /* Common */
+  main {
+    padding: 5rem;
+  }
+  .btn {
+    width: auto;
+  }
+  .title {
+    font-size: 1.875rem;
+  }
+
+  /* Table */
+  tr:nth-child(odd) {
+    background: #f8f6f2;
+  }
+  tr:nth-child(even) th {
+    background: #fff;
+  }
+
+  th,
+  td {
+    padding: 1.25rem;
+    display: table-cell;
+  }
+  th {
+    width: 24%;
+    vertical-align: middle;
+  }
+  td {
+    width: 76%;
+  }
+
+  /* Header */
+  header .wrapper {
+    padding: 2rem 1rem;
+  }
+  .logo {
+    width: 12rem;
+  }
+  .main-nav li {
+    margin-left: 2rem;
+    font-family: "Questrial", sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+  }
+  .main-nav a {
+    width: auto;
+  }
+  .main-nav a:hover,
+  .main-nav .current {
+    border-bottom: 2px solid #adadad;
+    padding-bottom: 0.5rem;
+    background: none;
+  }
+  .main-nav a::before {
+    content: "";
+  }
+
+  /* Home */
+  .home-hero {
+    padding: 16vw 1rem;
+  }
+  .home-hero h2 {
+    font-size: 2.5rem;
+    margin: 0 0 2rem;
+    background: none;
+    padding: 0;
+  }
+  .home-hero p {
+    width: 38vw;
+  }
+
+  /* Contents */
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 1rem;
+  }
+  .flex-reverse {
+    flex-direction: row-reverse;
+  }
+  .home-text {
+    width: 50vw;
+  }
+  .home-chart {
+    width: 34vw;
+  }
+
+}
+.chart-slice {
+  position: relative;
+}
+.chart-slice2 {
+  position: relative;
+}
+.chart-slice3 {
+  position: relative;
+}
+.chart-slice4 {
+  position: relative;
+}
+.chart-slice5 {
+  position: relative;
+}
+
+.chart-slice:hover::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 999;
+}
+.chart-slice2:hover::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:  #393a3a;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 999;
+}
+.chart-slice3:hover::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:  #666666;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 999;
+}
+.chart-slice4:hover::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #868686;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 999;
+}
+.chart-slice5:hover::after {
+  content: attr(data-label);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #b0b1b4;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+
+
+
+
+
+

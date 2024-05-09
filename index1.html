@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Styling Example</title>
+    <link rel="stylesheet" href="styles.css"> 
+        <script src="https://kit.fontawesome.com/b8a7fea4d4.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Questrial&display=swap" rel="stylesheet">
+
+    <!-- Make sure to link your CSS file here -->
+</head>
+<body>
+
+<script>
+	
+const satValue = 50;
+const sat = () => {
+	return `<label>City: <input type="range" min="0" max="100" id="saturation" value="${satValue}" /><span id="satVal">${satValue}</span>%</label>`;
+};
+
+const lightValue = 50;
+const light = () => {
+	return `<label>Code: <input type="range" min="0" max="100" id="lightness" value="${lightValue}" /><span id="lightVal">${lightValue}</span>%</label>`;
+};
+
+let fromLocalStorage = JSON.parse(localStorage.getItem('hue') ?? '[]');
+
+let selected = "";
+let css = "";
+const html = new Array(160).fill(0).reduce(
+	(s, c, i) => {
+		const hue = Math.floor(i * 2);
+		const inputClass = `hue${hue}`;
+		const checked = fromLocalStorage.includes(hue) ? ' checked ' : '';
+		selected += `<b class="${inputClass}" style="--hue: ${hue}"><em>${hue}</em></b>`;
+		css += `body:has(.${inputClass}:checked) b.${inputClass}  { display: block; }`;
+		return `${s}
+	<label style="--hue: ${hue}">
+	<input type="checkbox" ${checked} class="${inputClass}">		 
+	<div class="circle"><span>${hue}</span></div>
+	</label>`;
+	},
+	`
+<header><h1>NYC Zip Code</h1><section class="settings">${sat()} ${light()} <a href="index.html">Home</a></section></header>
+  <form class="app" id="form">`
+);
+document.body.innerHTML = `${html}<button id="reset" type="reset">Reset</button></form>
+<div class="selected">${selected}</div>
+<style>${css}</style>
+`;
+
+saturation.addEventListener("input", () => {
+	satVal.textContent = saturation.value;
+	document.documentElement.style.setProperty(
+		"--saturation",
+		`${saturation.value}%`
+	);
+});
+
+lightness.addEventListener("input", () => {
+	lightVal.textContent = lightness.value;
+	document.documentElement.style.setProperty(
+		"--lightness",
+		`${lightness.value}%`
+	);
+});
+
+form.addEventListener("click", () => {
+	setTimeout(
+		() => {
+
+		let checked = Array.from(document.querySelectorAll(':checked'));
+		checked = checked.map(e => parseInt(e.getAttribute('class').replace('hue', '')));
+		localStorage.setItem('hue', JSON.stringify(checked));
+		}
+	);
+})
+
+reset.addEventListener("click", () => {
+	localStorage.removeItem('hue');
+})
+
+
+</script>
+
+</body>
+</html>
